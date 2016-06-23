@@ -44,7 +44,7 @@ p {
   height: calc(100% - 100px);
 }
 
-button {
+button, input {
   border: 2px solid #FFF;
   padding: 10px;
   outline: none;
@@ -52,6 +52,10 @@ button {
   color: #FFF;
   font-weight: bolder;
   font-size: 2em;
+}
+
+#city-chooser {
+  width: 5.4em;
 }
 
 button:hover {

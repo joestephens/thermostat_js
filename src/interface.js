@@ -2,12 +2,16 @@ $(document).ready(function(){
   var thermostat = new Thermostat();
   updateTemperature();
   updatePowerSavingMode();
+  loadWeather('London');
 
-  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=b241ed97abb83074ef441ef8fd97adc3&units=metric', function(data) {
-    //var cityTemp = data.main.temp.floor();
-    $('#current-temperature').text(Math.floor(data.main.temp));
-    $('#city').text(data.name.toLowerCase());
-  });
+  $('#city-chooser').hide();
+
+  function loadWeather(city) {
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + ',uk&appid=b241ed97abb83074ef441ef8fd97adc3&units=metric', function(data) {
+      $('#current-temperature').text(Math.floor(data.main.temp));
+      $('#city').text(data.name.toLowerCase());
+    });
+  };
 
   $('#temperature-increase').click(function() {
     thermostat.increase();
@@ -28,6 +32,28 @@ $(document).ready(function(){
     thermostat.powerSavingSwitch();
     updatePowerSavingMode();
     updateTemperature();
+  });
+
+  $('#change-city').click(function() {
+    $(this).hide();
+    $('#city-chooser').show();
+    $('#city-chooser').focus();
+  });
+
+  $('#city-chooser').focus(function() {
+    $(document).keypress(function(e) {
+      if(e.which === 13) {
+        $('#change-city').click
+      };
+    });
+  });
+
+  $('#change-city-form').submit(function() {
+    loadWeather($('#city-chooser').val());
+    $('#change-city').show();
+    $('#city-chooser').hide();
+    $('#city-chooser').val('');
+    event.preventDefault();
   });
 
   function updateTemperature() {
