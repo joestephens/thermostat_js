@@ -3,18 +3,41 @@
 
   <head>
     <title>The PS OFF/ON Thermostat!</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <h1 id='temperature'>--</h1>
-    <button id='temperature-increase' type='button'>+</button>
-    <button id='temperature-decrease' type='button'>-</button>
-    <button id='temperature-reset' type='button'>Reset</button>
-    <p>
-      The power saving mode is <span id='power-saving-mode'></span>.
-    </p>
-    <button id='power-saving-switch' type='button'>Turn Off</button>
+    <div id="temperature-lcd">
+      <p>
+        <h1>thermostat</h1>
+        <h1 id="temperature">--</h1>
+      </p>
+      <p>
+        <button id="temperature-decrease" type="button">-</button>
+        <button id="temperature-increase" type="button">+</button>
+        <button id="temperature-reset" type="button">reset</button>
+      </p>
+      <p>
+        power saving mode is <span id="power-saving-mode"></span>
+        <br>
+        <br>
+        <button id="power-saving-switch" type="button">turn off</button>
+      </p>
+    </div>
+    <div id="control-box">
+      <div id="content">
+        <p>
+          <h1 id="city"></h1>
+          <h1 id="current-temperature"></h1>
+        </p>
+        <p>
+          <button type="button">change city</button>
+        </p>
+      </div>
+    </div>
   </body>
 
-  <script src="js/thermostat.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="src/thermostat.js"></script>
+  <script src="src/interface.js"></script>
 </html>

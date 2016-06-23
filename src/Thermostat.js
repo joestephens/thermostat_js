@@ -58,5 +58,13 @@ Thermostat.prototype = {
     } else {
       return 'medium-usage';
     }
+  },
+
+  powerSavingOnOff: function() {
+    return this.powerSavingMode ? 'on' : 'off';
+  },
+
+  powerSavingNotOnOff: function() {
+    return this.powerSavingMode ? 'off' : 'on';
   }
 };

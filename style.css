@@ -1,0 +1,83 @@
+body, html {
+  font-family: Helvetica Neue;
+  margin: 0;
+  height: 100%;
+}
+
+#power-saving-mode {
+  font-weight: bold;
+}
+
+#temperature-lcd {
+  background-color: #2A313B;
+  color: #FFF;
+  padding: 50px;
+  text-align: right;
+  float: left;
+  width: calc(50% - 100px);
+  height: calc(100% - 100px);
+}
+
+#temperature-lcd button {
+  background-color: #2A313B;
+  border: 2px solid #FFF;
+  min-width: 2em;
+  height: 2em;
+}
+
+#temperature-lcd button:hover {
+  border-color: #F779AB;
+  color: #F779AB;
+  cursor: pointer;
+}
+
+p {
+  margin: 50px 0 50px 0;
+}
+
+#control-box {
+  background-color: #F779AB;
+  padding: 50px;
+  color: #FFF;
+  float: right;
+  width: calc(50% - 100px);
+  height: calc(100% - 100px);
+}
+
+button {
+  border: 2px solid #FFF;
+  padding: 10px;
+  outline: none;
+  background-color: #F779AB;
+  color: #FFF;
+  font-weight: bolder;
+  font-size: 2em;
+}
+
+button:hover {
+  border-color: #2A313B;
+  color: #2A313B;
+  cursor: pointer;
+}
+
+h1 {
+  margin: 0;
+  font-size: 5em;
+  vertical-align: middle;
+}
+
+#content {
+  vertical-align: middle;
+}
+
+.low-usage {
+  color: #63D471;
+}
+
+.medium-usage {
+  color: #FFF;
+}
+
+.high-usage {
+  color: #FF715B;
+}

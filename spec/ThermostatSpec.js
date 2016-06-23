@@ -16,6 +16,24 @@ describe('Thermostat', function(){
     expect(thermostat.powerSavingMode).toBeTruthy();
   });
 
+  it('power saving mode can be on', function() {
+    expect(thermostat.powerSavingOnOff()).toEqual('on');
+  });
+
+  it('power saving mode can be off', function() {
+    thermostat.powerSavingSwitch();
+    expect(thermostat.powerSavingOnOff()).toEqual('off');
+  });
+
+  it('opposite to power saving mode on', function() {
+    expect(thermostat.powerSavingNotOnOff()).toEqual('off');
+  });
+
+  it('opposite to power saving mode off', function() {
+    thermostat.powerSavingSwitch();
+    expect(thermostat.powerSavingNotOnOff()).toEqual('on');
+  });
+
   it('increases temperature', function(){
     thermostat.increase();
     expect(thermostat.temperature).toEqual(21);
