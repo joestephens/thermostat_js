@@ -48,13 +48,21 @@ $(document).ready(function(){
     });
   });
 
+  $('#city-chooser').focusout(function() {
+    showChangeCity();
+  });
+
   $('#change-city-form').submit(function() {
     loadWeather($('#city-chooser').val());
+    showChangeCity();
+    event.preventDefault();
+  });
+
+  function showChangeCity() {
     $('#change-city').show();
     $('#city-chooser').hide();
     $('#city-chooser').val('');
-    event.preventDefault();
-  });
+  };
 
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);

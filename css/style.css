@@ -10,11 +10,12 @@ body, html {
 
 #temperature-lcd {
   background-color: #2A313B;
+  border-left: 10px solid #1c2127;
   color: #FFF;
   padding: 50px;
   text-align: right;
   float: left;
-  width: calc(50% - 100px);
+  width: calc(50% - 110px);
   height: calc(100% - 100px);
 }
 
@@ -38,10 +39,27 @@ p {
 #control-box {
   background-color: #F779AB;
   padding: 50px;
+  border-left: 10px solid #f55997;
   color: #FFF;
   float: right;
-  width: calc(50% - 100px);
+  width: calc(50% - 110px);
   height: calc(100% - 100px);
+}
+
+::-webkit-input-placeholder {
+   color: #f55997;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #f55997;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #f55997;
+}
+
+:-ms-input-placeholder {
+   color: #f55997;
 }
 
 button, input {
