@@ -32,6 +32,10 @@ body, html {
   cursor: pointer;
 }
 
+#temperature-lcd h1 {
+  text-shadow: 2px 2px #1c2127;
+}
+
 p {
   margin: 50px 0 50px 0;
 }
@@ -44,6 +48,10 @@ p {
   float: right;
   width: calc(50% - 110px);
   height: calc(100% - 100px);
+}
+
+#control-box h1 {
+  text-shadow: 2px 2px #f55997;
 }
 
 ::-webkit-input-placeholder {
